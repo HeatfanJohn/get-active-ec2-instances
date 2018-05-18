@@ -24,7 +24,10 @@ def get_id(instances):
     running_instances = []
     for instance in instances["Reservations"][0]["Instances"]:
         running_instances.append({'Instance ID': instance['InstanceId']})
-    return running_instances
+    if not running_instances:
+        print("No running instances detected!")
+    else:
+        return running_instances
 
 def dt_converter(d):
     """
