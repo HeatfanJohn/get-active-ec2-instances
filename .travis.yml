@@ -7,7 +7,7 @@ branches:
 services:
 - docker
 install:
-- pip install aws-cli
+- pip install awscli
 - pip install aws-sam-cli
 script:
 - sam validate
