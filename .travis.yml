@@ -8,7 +8,7 @@ services:
 - docker
 before_install:
 install:
-- pip install --user aws-sam-cli
+- pip install aws-sam-cli
 script:
 - sam validate
 - sam package --template-file template.yaml --s3-bucket mikes-travis-and-sam-deployment --output-template-file packaged.yaml
