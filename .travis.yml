@@ -12,7 +12,7 @@ install:
 script:
 - sam validate
 - sam package --template-file template.yaml --s3-bucket mikes-travis-and-sam-deployment --output-template-file packaged.yaml
-- sam deploy --template file packaged.yaml --stack-name travis-serverless-test
+- sam deploy --template-file packaged.yaml --stack-name travis-serverless-test
 deploy:
   skip_cleanup: true
 notifications:
