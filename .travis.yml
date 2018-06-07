@@ -6,8 +6,6 @@ branches:
   only: master
 services:
 - docker
-env:
-  - AWS_REGION=us-east-2
 install:
 - pip install aws-sam-cli
 script:

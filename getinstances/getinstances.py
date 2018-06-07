@@ -13,7 +13,8 @@ response = client.describe_instances(
             ]
         }
     ],
-    MaxResults=100
+    MaxResults=100,
+    region_name='us-east-2'
 )
 
 def get_id(instances):
