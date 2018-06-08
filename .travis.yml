@@ -4,8 +4,6 @@ python:
 - '2.7'
 branches:
   only: master
-services:
-- docker
 install:
 - pip install awscli
 - pip install aws-sam-cli
