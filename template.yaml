@@ -6,6 +6,6 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: getinstances.getinstances.my_handler
-      Role: arn:aws:iam::527065027343:role/ReadEC2StatusLambda
+      Role: arn:aws:iam::617287328294:role/ReadEC2StatusLambda
       Timeout: 300
       Runtime: python3.6
