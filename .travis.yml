@@ -8,7 +8,7 @@ install:
 - pip install aws-sam-cli
 script:
 - sam validate
-- sam package --template-file template.yaml --s3-bucket mikes-travis-and-sam-deployment --output-template-file packaged.yaml
+- sam package --template-file template.yaml --s3-bucket jpm-travis-ci --output-template-file packaged.yaml
 deploy:
   provider: script
   script: sam deploy --template-file packaged.yaml --stack-name travis-serverless-test
@@ -20,6 +20,4 @@ notifications:
     on_failure: always
 env:
   global:
-  - AWS_DEFAULT_REGION=us-east-2
-  - secure: eNAMIN8U4grZlpgHmUUZYrV9diBPWIAcnw21Rl3QEvHPDvM5Ca2XRUx1mBgKbLpQcjXjpUfe4qYVGGuF1MPUp4D1w55p61ZjYAd/wV3RmyPxebK4qmiBMM2IComX/Qik2+ua4sSwjxjlBeqT630Zhbs5rdpkCbO7nepL3sGva7PKNPUwyuRQanRPQLLrZTZtyLjn1SkMc7pZ/5nGYqIkmXITmDF8YiGBFHpRFlp8UCNZGdW4FJqAZte1wzNIqpx0g2UnDku+KIKoW1VZN020tbplx0QPHiFKUvGBablthvOdv2dUMSrsKiG06g99IcUuy+T2+GHZhTI1weZCtDhGND7x/0hdgNqCSqFN+6Qta6RQiHo54dT3ObJ/CrDVUkWJq9BbXgLy41erqLx68jiT772P8or6kEDSizo5VWf1m2Vbo5Wcp7FzLzjlrttQxa7Hk24coIctujONJMctD/IT29sPi8LdbZyr3VKfTJGp3enDO/q+pXPiK3cisci6OBiLmnUDPCF66LxC/DcbdOMACnRZt048wxMN5/3a1Dewhh2yJDckTMkDSBzh0Uhe5SrLA71RxK08iFDtmEGHKg6cDdvaJTphpabTnMdaEYVn1Y9MjookvdnBOWXwC0C1O7fQ4+67GkEHLKNcu7Mx+Shd5o2n/Vpp6Y0p4Fx4qrcmU7M=
-  - secure: FUgD9k74Qfw75K4tfyIkWYG/v69p2dp/W7a4y4eu1iyZwS14UzHPzdMu/4S4PrAllSmBppn0dJTNkC9gX/eTiHKqA3HKV7ZoHqcnNWJc0yN3gORHp2d1QW3vW+hdumLkyZq3fA8MB9FoF8038ZnC0U4vc4uTMPZssYvJtJSk9AbnP9IZ7i5UFaWGJX4edUkclRkPK8Qq9Wksrc2QmWClW5rXSyC85T5MEuzNWd+HWeJ1Oayf8Dn2WQfcgZfl0sTQpkLmmX2VpW3GqsnyasAifyOBAvT6ext/EOExVfTMga03fKBs3IIAhRtkS1QQfRfXoiYymJDdWQZed04IQKca3KWl6csU8tlvN9EMgzyW9IPlDO01orn9pBrIpG2yLngI9Dq7KmKpUHT9d73ph31SXwLJTweDTIL7607CyI/V/Mrq+lVvdFJtE4zv23ZvXgEEWM0LVab8jVWnDdEPcif0HRNRoCahQHj4zlXFugV4xHGPX5MnstE1Ut9j7XVRh0VA+UqAwM4/po/R/wN0aOTYnaCvPGPyewEMvWpVxm+pY3FzsAqvQ4pAnlePspH1Qy+Z0hpgrfbmcQUJYu+wgUiRzD2ry4ccRd9xnfwLZ/gyNVbmoXmAfTZ5FWjWwaWame/BVgxEBVaiTW3UUC+Ws2LG9pKJmW0gMEuQOCW6g1TPOGg=
+  - AWS_DEFAULT_REGION=us-east-1
