@@ -1,10 +1,14 @@
-import boto3
+"""
+   AWS Lambda function to return a list of the active EC2 instances running
+   in an account.
+"""
 import json
 import datetime
+import boto3
 
-client = boto3.client('ec2')
+CLIENT = boto3.client('ec2')
 
-response = client.describe_instances(
+RESPONSE = CLIENT.describe_instances(
     Filters=[
         {
             'Name': 'instance-state-name',
@@ -42,10 +46,10 @@ def encoder(j):
     can be converted to compatible strings before reloading
     as json again
     """
-    return json.loads(json.dumps(j, default = dt_converter))
+    return json.loads(json.dumps(j, default=dt_converter))
 
 def my_handler(event, context):
     """
     lambda event handler that returns the list of instances
     """
-    return encoder(get_id(response))
+    return encoder(get_id(RESPONSE))
